@@ -5,7 +5,10 @@
     <title>Day of Birth Finder</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <!-- theme-color -->
+    <meta name="theme-color" content="#fff" />
+    <!-- end-theme-color -->
     <!-- Twitter Card-->
     <meta name="twitter:title" content="Day of Birth Finder">
     <meta name="twitter:site" content="dob-finder.firebaseapp.com" />
@@ -35,7 +38,25 @@
             "description": "This script checks your Date of Birth and detects the Day of the Week you were born."
         }
     </script>
-    <!--Bootstrap CDN-->
+
+    <!-- register service worker -->
+<script>
+    if ('serviceWorker' in navigator){
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/service-worker.js")')
+            .then(()=>{
+                console.log('Service Worker Registered!');
+            });
+        });
+    }
+</script>
+<!-- end of service worker -->
+
+<!-- start of web manifest -->
+<link rel="manifest href="/manifest.json">
+<!-- end of web manifest -->
+
+<!--Bootstrap CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
 
